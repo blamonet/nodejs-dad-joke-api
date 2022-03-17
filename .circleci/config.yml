@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run:
           name: "Running ESLint"
-          command: "npm run lint"
+          command: "npm install & npm run lint"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
