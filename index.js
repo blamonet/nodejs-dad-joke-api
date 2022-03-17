@@ -15,4 +15,4 @@ const jokeMiddleware = (req, res, next) => {
 app.use(jokeMiddleware);
 app.use('/', routes);
 
-app.listen(port, () => {});
+app.listen(port, null);
