@@ -1,5 +1,5 @@
 const express = require('express');
-const { version } = require('../../package.json').version;
+const { version } = require('./../../package.json').version;
 const router = express.Router();
 router.get('/', (req, res) => {
     res.send(`Welcome to the Joke API ${version}!`);

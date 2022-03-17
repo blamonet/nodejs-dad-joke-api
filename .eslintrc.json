@@ -6,9 +6,16 @@
     },
     "extends": ["airbnb-base"],
     "parser": "@typescript-eslint/parser",
-    "rules": { "indent": ["error", 4] },
+    "rules": { "indent": ["error", 4], "import/extensions": 0 },
     "parserOptions": {
         "ecmaVersion": "latest"
     },
-    "plugins": ["@typescript-eslint"]
+    "plugins": ["@typescript-eslint"],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+        }
+    }
 }
