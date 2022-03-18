@@ -6,7 +6,11 @@
     },
     "extends": ["airbnb-base"],
     "parser": "@typescript-eslint/parser",
-    "rules": { "indent": ["error", 4], "import/extensions": 0 },
+    "rules": {
+        "indent": ["error", 4],
+        "import/extensions": 0,
+        "import/prefer-default-export": "off"
+    },
     "parserOptions": {
         "ecmaVersion": "latest"
     },
