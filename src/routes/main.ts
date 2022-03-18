@@ -1,13 +1,11 @@
-const express = require('express');
+import * as express from 'express';
 
-const router = express.Router();
+export const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.send(`Welcome to the Joke API ${process.env.VERSION}!`);
+    res.send(`Welcome to the Joke API ${process.env.npm_package_version}!`);
 });
 
 router.get('/random', (req, res) => {
     res.send(JSON.stringify(req.joke));
 });
-
-module.exports = router;

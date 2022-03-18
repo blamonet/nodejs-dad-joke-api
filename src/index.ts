@@ -1,21 +1,19 @@
-const expressService = require('express');
-const routes = require('./routes/main');
-const jokeService = require('./services/joke');
-const packageInformation = require('../package.json');
+import express from 'express';
+import { router } from './routes/main';
+import { JokeService } from './services/joke';
 
-const app = expressService();
+const app = express();
 const port = 80;
 
-const jokes = jokeService.loadJokes();
-process.env.VERSION = packageInformation.version;
+const jokes = JokeService.loadJokes();
 
 const jokeMiddleware = (req, res, next) => {
-    req.joke = jokeService.randomJoke(jokes);
+    req.joke = JokeService.randomJoke(jokes);
     next();
 };
 
 app.use(jokeMiddleware);
 
-app.use('/', routes);
+app.use('/', router);
 
 app.listen(port, null);

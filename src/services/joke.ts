@@ -1,12 +1,10 @@
-const fs = require('fs');
+import fs = require('fs');
 
-const joke = {
-    loadJokes() {
+export namespace JokeService {
+    export function loadJokes(): Array<string> {
         return JSON.parse(fs.readFileSync('./data/jokes.json', 'utf8'));
-    },
-    randomJoke(jokes) {
+    }
+    export function randomJoke(jokes: Array<string>): string {
         return jokes[Math.floor(Math.random() * jokes.length)];
-    },
-};
-
-module.exports = joke;
+    }
+}
